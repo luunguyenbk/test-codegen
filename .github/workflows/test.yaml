@@ -15,7 +15,7 @@ jobs:
 
       - name: Generate code from Swagger file
         run: |
-          java -jar ./bin/swagger-codegen-cli.jar generate -i https://app.statflo.com/api/doc.json -l java -o . \
+          java -jar ./bin/swagger-codegen-cli-3.0.29.jar generate -i https://app.statflo.com/api/doc.json -l java -o . \
           --invoker-package com.statflo.client \
           --model-package com.statflo.client.model \
           --api-package com.statflo.client.api \
