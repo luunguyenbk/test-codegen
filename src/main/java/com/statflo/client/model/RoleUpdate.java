@@ -25,7 +25,7 @@ import java.io.IOException;
  * RoleUpdate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T18:18:45.760652Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T18:29:27.710143Z[Etc/UTC]")
 public class RoleUpdate {
   @SerializedName("id")
   private Integer id = null;
