@@ -25,7 +25,7 @@ import java.io.IOException;
  * CarrierAllowedCallListsSummary
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T18:18:45.760652Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T18:33:03.098114Z[Etc/UTC]")
 public class CarrierAllowedCallListsSummary {
   @SerializedName("carrierId")
   private Integer carrierId = null;
