@@ -1,12 +1,13 @@
 name: Tedt codegen
 
 on:
-  workflow_dispatch:
-    inputs:
-      GIT_REF:
-        description: Git Ref (Optional)    
-        required: false 
-
+  # workflow_dispatch:
+  #   inputs:
+  #     GIT_REF:
+  #       description: Git Ref (Optional)    
+  #       required: false 
+  repository_dispatch:
+      types: [release-created]
 jobs:
   build:
     runs-on: ubuntu-latest
