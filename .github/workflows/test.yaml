@@ -21,6 +21,9 @@ jobs:
           --api-package com.statflo.client.api \
           --additional-properties groupId=com.statflo,artifactId=statflo-java-sdk
 
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
@@ -46,3 +49,5 @@ jobs:
           # Create new tag and push
           git tag $new_tag
           git push origin $new_tag
+
+          gh release create $new_tag --title "Release $new_tag" --notes "Auto-generated release for $new_tag"
