@@ -29,7 +29,7 @@ import java.util.List;
  * UserPaginationResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T20:14:26.276980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T20:49:11.222592Z[Etc/UTC]")
 public class UserPaginationResponse {
   @SerializedName("items")
   private List<UserSummary> items = null;
