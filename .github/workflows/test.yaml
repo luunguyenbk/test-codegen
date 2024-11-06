@@ -3,11 +3,7 @@ name: Tedt codegen
 on:
   # Manually trigger the workflow for testing purposes
   workflow_dispatch:
-    inputs:
-      GIT_REF:
-        description: Git Ref (Optional)    
-        required: false 
-
+ 
   # Listen for the release-created event which is triggered by the webapp deploy action. https://github.com/peter-evans/repository-dispatch helps to implement Event-based communication between workflows.
   # repository_dispatch:
   #     types: [release-created]
