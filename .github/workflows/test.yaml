@@ -1,25 +1,36 @@
 name: Tedt codegen
 
 on:
-  # workflow_dispatch:
-  #   inputs:
-  #     GIT_REF:
-  #       description: Git Ref (Optional)    
-  #       required: false 
-  repository_dispatch:
-      types: [release-created]
+  # Manually trigger the workflow for testing purposes
+  workflow_dispatch:
+    inputs:
+      GIT_REF:
+        description: Git Ref (Optional)    
+        required: false 
+
+  # Listen for the release-created event which is triggered by the webapp deploy action. https://github.com/peter-evans/repository-dispatch helps to implement Event-based communication between workflows.
+  # repository_dispatch:
+  #     types: [release-created]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for 120 seconds
+        run: sleep 120s
+        shell: bash
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Pull client info
-        env:
-          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
-        run: echo "$PAYLOAD_CONTEXT"
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
+      # This step is used to pull the client info from the Dispatcher
+      # - name: Pull client info 
+      #   env:
+      #     PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
+      #   run: echo "$PAYLOAD_CONTEXT"
 
       # - name: Generate code from Swagger file
       #   run: |
@@ -28,9 +39,6 @@ jobs:
       #     --model-package com.statflo.client.model \
       #     --api-package com.statflo.client.api \
       #     --additional-properties groupId=com.statflo,artifactId=statflo-java-sdk
-
-      # - name: Install GitHub CLI
-      #   run: sudo apt-get install -y gh
 
       # - name: Commit and Push
       #   run: |
