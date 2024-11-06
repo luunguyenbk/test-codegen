@@ -11,49 +11,45 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Test
+      - name: Generate code from Swagger file
         run: |
+          java -jar ./bin/swagger-codegen-cli-3.0.29.jar generate -i https://app.statflo.com/api/doc.json -l java -o . \
+          --invoker-package com.statflo.client \
+          --model-package com.statflo.client.model \
+          --api-package com.statflo.client.api \
+          --additional-properties groupId=com.statflo,artifactId=statflo-java-sdk
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update generated SDK (run number: ${GITHUB_RUN_NUMBER})"
+          git push origin main
+
+      - name: Create a release tag
+        run: |
+          # Get the latest tag, or default to v0.0.0 if none exists
           latest_tag=$(git describe --tags `git rev-list --tags --max-count=1` || echo "v0.0.0")
-          echo $latest_tag
 
+          # Extract version numbers
+          major=$(echo $latest_tag | cut -d. -f1 | cut -c2-)
+          minor=$(echo $latest_tag | cut -d. -f2)
+          patch=$(echo $latest_tag | cut -d. -f3)
 
-      # - name: Generate code from Swagger file
-      #   run: |
-      #     java -jar ./bin/swagger-codegen-cli-3.0.29.jar generate -i https://app.statflo.com/api/doc.json -l java -o . \
-      #     --invoker-package com.statflo.client \
-      #     --model-package com.statflo.client.model \
-      #     --api-package com.statflo.client.api \
-      #     --additional-properties groupId=com.statflo,artifactId=statflo-java-sdk
+          # Increment the patch version
+          new_patch=$((patch + 1))
+          new_tag="v$major.$minor.$new_patch"
 
-      # - name: Install GitHub CLI
-      #   run: sudo apt-get install -y gh
+          # Create new tag and push
+          git tag $new_tag
+          git push origin $new_tag
 
-      # - name: Commit and Push
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      #     git add .
-      #     git commit -m "Update generated SDK (run number: ${GITHUB_RUN_NUMBER})"
-      #     git push origin main
-
-      # - name: Create a release tag
-      #   run: |
-      #     # Get the latest tag, or default to v0.0.0 if none exists
-      #     latest_tag=$(git describe --tags `git rev-list --tags --max-count=1` || echo "v0.0.0")
-
-      #     # Extract version numbers
-      #     major=$(echo $latest_tag | cut -d. -f1 | cut -c2-)
-      #     minor=$(echo $latest_tag | cut -d. -f2)
-      #     patch=$(echo $latest_tag | cut -d. -f3)
-
-      #     # Increment the patch version
-      #     new_patch=$((patch + 1))
-      #     new_tag="v$major.$minor.$new_patch"
-
-      #     # Create new tag and push
-      #     git tag $new_tag
-      #     git push origin $new_tag
-
-      #     gh release create $new_tag --title "Release $new_tag" --notes "Auto-generated release for $new_tag"
+          gh release create $new_tag --title "Release $new_tag" --notes "Auto-generated release for $new_tag"
