@@ -28,3 +28,21 @@ jobs:
           git add .
           git commit -m "Update generated SDK (run number: ${GITHUB_RUN_NUMBER})"
           git push origin main
+
+      - name: Create a release tag
+        run: |
+          # Get the latest tag, or default to v0.0.0 if none exists
+          latest_tag=$(git describe --tags `git rev-list --tags --max-count=1` || echo "v0.0.0")
+
+          # Extract version numbers
+          major=$(echo $latest_tag | cut -d. -f1 | cut -c2-)
+          minor=$(echo $latest_tag | cut -d. -f2)
+          patch=$(echo $latest_tag | cut -d. -f3)
+
+          # Increment the patch version
+          new_patch=$((patch + 1))
+          new_tag="v$major.$minor.$new_patch"
+
+          # Create new tag and push
+          git tag $new_tag
+          git push origin $new_tag
