@@ -25,7 +25,7 @@ import java.io.IOException;
  * RolePermissionUpdate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T18:33:03.098114Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T20:14:26.276980Z[Etc/UTC]")
 public class RolePermissionUpdate {
   @SerializedName("dealerSpecific")
   private Boolean dealerSpecific = null;
