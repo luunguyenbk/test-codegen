@@ -13,7 +13,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Create Containers
+      - name: Download Swagger Codegen CLI v3 JAR
+        run: |
+          curl -L -o swagger-codegen-cli.jar https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.29/swagger-codegen-cli-3.0.29.jar
+
+      - name: Generate code from Swagger file
+        run: |
+          java -jar swagger-codegen-cli.jar -i https://app.statflo.com/api/doc.json -l java -o statflo-java-sdk \
+          --invoker-package com.statflo.client \
+          --model-package com.statflo.client.model \
+          --api-package com.statflo.client.api \
+          --additional-properties groupId=com.statflo,artifactId=statflo-java-sdk
+
+      - name: Check
         run: ls -la
 
 
