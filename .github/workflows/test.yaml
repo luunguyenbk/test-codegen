@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SLEEP_DURATION: 120s
+      SLEEP_DURATION: 5s
       SWAGGER_URL: https://app.statflo.com/api/doc.json
       RELEASE_VERSION: ${{ inputs.release_version }} 
       
