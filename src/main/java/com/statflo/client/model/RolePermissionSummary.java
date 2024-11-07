@@ -27,7 +27,7 @@ import java.io.IOException;
  * RolePermissionSummary
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T14:35:54.524380Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T16:37:58.281269Z[Etc/UTC]")
 public class RolePermissionSummary {
   @SerializedName("role")
   private Role role = null;
