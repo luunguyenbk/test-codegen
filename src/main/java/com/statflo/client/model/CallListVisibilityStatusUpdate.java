@@ -25,7 +25,7 @@ import java.io.IOException;
  * CallListVisibilityStatusUpdate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T18:05:04.958560Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T18:06:33.884051Z[Etc/UTC]")
 public class CallListVisibilityStatusUpdate {
   @SerializedName("id")
   private Integer id = null;
