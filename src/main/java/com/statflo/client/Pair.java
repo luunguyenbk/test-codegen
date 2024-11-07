@@ -12,7 +12,7 @@
 
 package com.statflo.client;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-06T20:49:11.222592Z[Etc/UTC]")public class Pair {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T14:35:54.524380Z[Etc/UTC]")public class Pair {
     private String name = "";
     private String value = "";
 
