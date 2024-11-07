@@ -15,7 +15,7 @@ package com.statflo.client;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T17:45:43.791675Z[Etc/UTC]")public class ApiException extends Exception {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T18:05:04.958560Z[Etc/UTC]")public class ApiException extends Exception {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;
     private String responseBody = null;
