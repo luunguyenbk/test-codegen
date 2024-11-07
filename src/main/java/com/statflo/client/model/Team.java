@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * Team
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T16:37:58.281269Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T17:45:43.791675Z[Etc/UTC]")
 public class Team {
   @SerializedName("id")
   private Integer id = null;
