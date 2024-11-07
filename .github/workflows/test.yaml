@@ -8,14 +8,18 @@ on:
         type: string
         required: true
   # Listen for the release-created event which is triggered by the webapp deploy action. https://github.com/peter-evans/repository-dispatch helps to implement Event-based communication between workflows.
-  # repository_dispatch:
-  #     types: [release-created]
+  repository_dispatch:
+      types: [release-created]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SLEEP_DURATION: 120s
+      SWAGGER_URL: https://app.statflo.com/api/doc.json
+      
     steps:
-      - name: Wait for 120 seconds
-        run: sleep 120s
+      - name: Wait for environment-defined duration
+        run: sleep $SLEEP_DURATION
         shell: bash
 
       - uses: actions/checkout@v3
@@ -33,7 +37,7 @@ jobs:
 
       - name: Generate code from Swagger file
         run: |
-          java -jar ./bin/swagger-codegen-cli-3.0.29.jar generate -i https://app.statflo.com/api/doc.json -l java -o . \
+          java -jar ./bin/swagger-codegen-cli-3.0.29.jar generate -i $SWAGGER_URL -l java -o . \
           --invoker-package com.statflo.client \
           --model-package com.statflo.client.model \
           --api-package com.statflo.client.api \
