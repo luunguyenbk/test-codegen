@@ -42,7 +42,7 @@ jobs:
 
       - name: Generate code from Swagger file
         run: |
-          java -jar ./bin/swagger-codegen-cli-3.0.29.jar generate -i $SWAGGER_URL -l java -o . \
+          java -jar ./bin/swagger-codegen-cli-3.0.62.jar generate -i $SWAGGER_URL -l java -o . \
           --invoker-package com.statflo.client \
           --model-package com.statflo.client.model \
           --api-package com.statflo.client.api \
