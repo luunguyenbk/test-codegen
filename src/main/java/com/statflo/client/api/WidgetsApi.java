@@ -35,6 +35,7 @@ import java.util.Map;
 
 public class WidgetsApi {
     private ApiClient apiClient;
+    private Map<String, String> headers;
 
     public WidgetsApi() {
         this(Configuration.getDefaultApiClient());
@@ -50,6 +51,10 @@ public class WidgetsApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
+    }
+
+    public void setHeadersOverrides(Map<String, String> headers) {
+        this.headers = headers;
     }
 
     /**
@@ -99,6 +104,9 @@ public class WidgetsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     

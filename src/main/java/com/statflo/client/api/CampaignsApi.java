@@ -39,6 +39,7 @@ import java.util.Map;
 
 public class CampaignsApi {
     private ApiClient apiClient;
+    private Map<String, String> headers;
 
     public CampaignsApi() {
         this(Configuration.getDefaultApiClient());
@@ -54,6 +55,10 @@ public class CampaignsApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
+    }
+
+    public void setHeadersOverrides(Map<String, String> headers) {
+        this.headers = headers;
     }
 
     /**
@@ -102,6 +107,9 @@ public class CampaignsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -223,6 +231,9 @@ public class CampaignsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -344,6 +355,9 @@ public class CampaignsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -434,7 +448,7 @@ public class CampaignsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call campaignSearchCall(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call campaignSearchCall(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -482,11 +496,14 @@ public class CampaignsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call campaignSearchValidateBeforeCall(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call campaignSearchValidateBeforeCall(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         com.squareup.okhttp.Call call = campaignSearchCall(filter, query, page, perPage, sort, progressListener, progressRequestListener);
         return call;
@@ -508,7 +525,7 @@ public class CampaignsApi {
      * @return CampaignPaginationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CampaignPaginationResponse campaignSearch(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public CampaignPaginationResponse campaignSearch(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         ApiResponse<CampaignPaginationResponse> resp = campaignSearchWithHttpInfo(filter, query, page, perPage, sort);
         return resp.getData();
     }
@@ -524,7 +541,7 @@ public class CampaignsApi {
      * @return ApiResponse&lt;CampaignPaginationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CampaignPaginationResponse> campaignSearchWithHttpInfo(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public ApiResponse<CampaignPaginationResponse> campaignSearchWithHttpInfo(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         com.squareup.okhttp.Call call = campaignSearchValidateBeforeCall(filter, query, page, perPage, sort, null, null);
         Type localVarReturnType = new TypeToken<CampaignPaginationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -542,7 +559,7 @@ public class CampaignsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call campaignSearchAsync(HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<CampaignPaginationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call campaignSearchAsync(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<CampaignPaginationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -616,6 +633,9 @@ public class CampaignsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     

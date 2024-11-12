@@ -26,7 +26,8 @@ import java.io.IOException;
  * DistrictSummary
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T18:06:33.884051Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-12T22:22:16.166043Z[Etc/UTC]")
+
 public class DistrictSummary {
   @SerializedName("id")
   private Integer id = null;

@@ -26,7 +26,8 @@ import org.threeten.bp.OffsetDateTime;
  * AccountMemberCreate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T18:06:33.884051Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-12T22:22:16.166043Z[Etc/UTC]")
+
 public class AccountMemberCreate {
   @SerializedName("id")
   private Integer id = null;
@@ -42,10 +43,15 @@ public class AccountMemberCreate {
    */
   @JsonAdapter(AccountTypeEnum.Adapter.class)
   public enum AccountTypeEnum {
+    @SerializedName("B")
     B("B"),
+    @SerializedName("I")
     I("I"),
+    @SerializedName("L")
     L("L"),
+    @SerializedName("C")
     C("C"),
+    @SerializedName("D")
     D("D");
 
     private String value;
@@ -61,9 +67,9 @@ public class AccountMemberCreate {
     public String toString() {
       return String.valueOf(value);
     }
-    public static AccountTypeEnum fromValue(String text) {
+    public static AccountTypeEnum fromValue(String input) {
       for (AccountTypeEnum b : AccountTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
@@ -72,13 +78,13 @@ public class AccountMemberCreate {
     public static class Adapter extends TypeAdapter<AccountTypeEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final AccountTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public AccountTypeEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return AccountTypeEnum.fromValue(String.valueOf(value));
+        return AccountTypeEnum.fromValue((String)(value));
       }
     }
   }  @SerializedName("accountType")
@@ -89,7 +95,9 @@ public class AccountMemberCreate {
    */
   @JsonAdapter(LanguageEnum.Adapter.class)
   public enum LanguageEnum {
+    @SerializedName("en")
     EN("en"),
+    @SerializedName("fr")
     FR("fr");
 
     private String value;
@@ -105,9 +113,9 @@ public class AccountMemberCreate {
     public String toString() {
       return String.valueOf(value);
     }
-    public static LanguageEnum fromValue(String text) {
+    public static LanguageEnum fromValue(String input) {
       for (LanguageEnum b : LanguageEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
@@ -116,13 +124,13 @@ public class AccountMemberCreate {
     public static class Adapter extends TypeAdapter<LanguageEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final LanguageEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public LanguageEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return LanguageEnum.fromValue(String.valueOf(value));
+        return LanguageEnum.fromValue((String)(value));
       }
     }
   }  @SerializedName("language")

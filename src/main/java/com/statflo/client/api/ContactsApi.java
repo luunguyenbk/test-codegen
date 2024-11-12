@@ -39,6 +39,7 @@ import java.util.Map;
 
 public class ContactsApi {
     private ApiClient apiClient;
+    private Map<String, String> headers;
 
     public ContactsApi() {
         this(Configuration.getDefaultApiClient());
@@ -54,6 +55,10 @@ public class ContactsApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
+    }
+
+    public void setHeadersOverrides(Map<String, String> headers) {
+        this.headers = headers;
     }
 
     /**
@@ -102,6 +107,9 @@ public class ContactsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -223,6 +231,9 @@ public class ContactsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -344,6 +355,9 @@ public class ContactsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -469,6 +483,9 @@ public class ContactsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -559,7 +576,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call contactSearchCall(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call contactSearchCall(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -607,11 +624,14 @@ public class ContactsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call contactSearchValidateBeforeCall(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call contactSearchValidateBeforeCall(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         com.squareup.okhttp.Call call = contactSearchCall(filter, query, page, perPage, sort, progressListener, progressRequestListener);
         return call;
@@ -633,7 +653,7 @@ public class ContactsApi {
      * @return ContactPaginationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ContactPaginationResponse contactSearch(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public ContactPaginationResponse contactSearch(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         ApiResponse<ContactPaginationResponse> resp = contactSearchWithHttpInfo(filter, query, page, perPage, sort);
         return resp.getData();
     }
@@ -649,7 +669,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactPaginationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ContactPaginationResponse> contactSearchWithHttpInfo(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public ApiResponse<ContactPaginationResponse> contactSearchWithHttpInfo(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         com.squareup.okhttp.Call call = contactSearchValidateBeforeCall(filter, query, page, perPage, sort, null, null);
         Type localVarReturnType = new TypeToken<ContactPaginationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -667,7 +687,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call contactSearchAsync(HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<ContactPaginationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call contactSearchAsync(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<ContactPaginationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -705,7 +725,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call contactSearch_0Call(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call contactSearch_0Call(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -753,11 +773,14 @@ public class ContactsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call contactSearch_0ValidateBeforeCall(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call contactSearch_0ValidateBeforeCall(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         com.squareup.okhttp.Call call = contactSearch_0Call(filter, query, page, perPage, sort, progressListener, progressRequestListener);
         return call;
@@ -779,7 +802,7 @@ public class ContactsApi {
      * @return ContactPaginationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ContactPaginationResponse contactSearch_0(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public ContactPaginationResponse contactSearch_0(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         ApiResponse<ContactPaginationResponse> resp = contactSearch_0WithHttpInfo(filter, query, page, perPage, sort);
         return resp.getData();
     }
@@ -795,7 +818,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactPaginationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ContactPaginationResponse> contactSearch_0WithHttpInfo(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public ApiResponse<ContactPaginationResponse> contactSearch_0WithHttpInfo(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         com.squareup.okhttp.Call call = contactSearch_0ValidateBeforeCall(filter, query, page, perPage, sort, null, null);
         Type localVarReturnType = new TypeToken<ContactPaginationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -813,7 +836,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call contactSearch_0Async(HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<ContactPaginationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call contactSearch_0Async(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<ContactPaginationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -887,6 +910,9 @@ public class ContactsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     

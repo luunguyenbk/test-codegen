@@ -37,6 +37,7 @@ import java.util.Map;
 
 public class LocationsApi {
     private ApiClient apiClient;
+    private Map<String, String> headers;
 
     public LocationsApi() {
         this(Configuration.getDefaultApiClient());
@@ -52,6 +53,10 @@ public class LocationsApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
+    }
+
+    public void setHeadersOverrides(Map<String, String> headers) {
+        this.headers = headers;
     }
 
     /**
@@ -101,6 +106,9 @@ public class LocationsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -226,6 +234,9 @@ public class LocationsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -316,7 +327,7 @@ public class LocationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call locationSearchCall(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call locationSearchCall(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -364,11 +375,14 @@ public class LocationsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call locationSearchValidateBeforeCall(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call locationSearchValidateBeforeCall(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         com.squareup.okhttp.Call call = locationSearchCall(filter, query, page, perPage, sort, progressListener, progressRequestListener);
         return call;
@@ -390,7 +404,7 @@ public class LocationsApi {
      * @return LocationPaginationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LocationPaginationResponse locationSearch(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public LocationPaginationResponse locationSearch(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         ApiResponse<LocationPaginationResponse> resp = locationSearchWithHttpInfo(filter, query, page, perPage, sort);
         return resp.getData();
     }
@@ -406,7 +420,7 @@ public class LocationsApi {
      * @return ApiResponse&lt;LocationPaginationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LocationPaginationResponse> locationSearchWithHttpInfo(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public ApiResponse<LocationPaginationResponse> locationSearchWithHttpInfo(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         com.squareup.okhttp.Call call = locationSearchValidateBeforeCall(filter, query, page, perPage, sort, null, null);
         Type localVarReturnType = new TypeToken<LocationPaginationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -424,7 +438,7 @@ public class LocationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call locationSearchAsync(HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<LocationPaginationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call locationSearchAsync(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<LocationPaginationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -462,7 +476,7 @@ public class LocationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call locationSearch_0Call(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call locationSearch_0Call(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -510,11 +524,14 @@ public class LocationsApi {
         }
 
         String[] localVarAuthNames = new String[] { "Bearer" };
+        if (headers != null) {
+            localVarHeaderParams.putAll(headers);
+        }
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call locationSearch_0ValidateBeforeCall(HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call locationSearch_0ValidateBeforeCall(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         com.squareup.okhttp.Call call = locationSearch_0Call(filter, query, page, perPage, sort, progressListener, progressRequestListener);
         return call;
@@ -536,7 +553,7 @@ public class LocationsApi {
      * @return LocationPaginationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LocationPaginationResponse locationSearch_0(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public LocationPaginationResponse locationSearch_0(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         ApiResponse<LocationPaginationResponse> resp = locationSearch_0WithHttpInfo(filter, query, page, perPage, sort);
         return resp.getData();
     }
@@ -552,7 +569,7 @@ public class LocationsApi {
      * @return ApiResponse&lt;LocationPaginationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LocationPaginationResponse> locationSearch_0WithHttpInfo(HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
+    public ApiResponse<LocationPaginationResponse> locationSearch_0WithHttpInfo(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort) throws ApiException {
         com.squareup.okhttp.Call call = locationSearch_0ValidateBeforeCall(filter, query, page, perPage, sort, null, null);
         Type localVarReturnType = new TypeToken<LocationPaginationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -570,7 +587,7 @@ public class LocationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call locationSearch_0Async(HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<LocationPaginationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call locationSearch_0Async(java.util.HashMap filter, String query, Integer page, Integer perPage, String sort, final ApiCallback<LocationPaginationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -26,7 +26,8 @@ import org.threeten.bp.OffsetDateTime;
  * CampaignMetadataCreate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T18:06:33.884051Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-12T22:22:16.166043Z[Etc/UTC]")
+
 public class CampaignMetadataCreate {
   @SerializedName("id")
   private Integer id = null;
@@ -39,14 +40,23 @@ public class CampaignMetadataCreate {
    */
   @JsonAdapter(MetadataEnum.Adapter.class)
   public enum MetadataEnum {
+    @SerializedName("visibility_crm")
     VISIBILITY_CRM("visibility_crm"),
+    @SerializedName("visibility_report")
     VISIBILITY_REPORT("visibility_report"),
+    @SerializedName("translations")
     TRANSLATIONS("translations"),
+    @SerializedName("call_list_priority")
     CALL_LIST_PRIORITY("call_list_priority"),
+    @SerializedName("override_default_visibility")
     OVERRIDE_DEFAULT_VISIBILITY("override_default_visibility"),
+    @SerializedName("visibility_lead_selection")
     VISIBILITY_LEAD_SELECTION("visibility_lead_selection"),
+    @SerializedName("visibility_campaign_widget")
     VISIBILITY_CAMPAIGN_WIDGET("visibility_campaign_widget"),
+    @SerializedName("default_start_end_date")
     DEFAULT_START_END_DATE("default_start_end_date"),
+    @SerializedName("salesforce_campaign_id")
     SALESFORCE_CAMPAIGN_ID("salesforce_campaign_id");
 
     private String value;
@@ -62,9 +72,9 @@ public class CampaignMetadataCreate {
     public String toString() {
       return String.valueOf(value);
     }
-    public static MetadataEnum fromValue(String text) {
+    public static MetadataEnum fromValue(String input) {
       for (MetadataEnum b : MetadataEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
@@ -73,13 +83,13 @@ public class CampaignMetadataCreate {
     public static class Adapter extends TypeAdapter<MetadataEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final MetadataEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public MetadataEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return MetadataEnum.fromValue(String.valueOf(value));
+        return MetadataEnum.fromValue((String)(value));
       }
     }
   }  @SerializedName("metadata")

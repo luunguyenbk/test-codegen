@@ -130,7 +130,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 LocationsApi apiInstance = new LocationsApi();
-HashMap filter = new HashMap(); // HashMap | 
+java.util.HashMap filter = new java.util.HashMap(); // java.util.HashMap | 
 String query = "query_example"; // String | 
 Integer page = 56; // Integer | 
 Integer perPage = 56; // Integer | 
@@ -148,7 +148,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**HashMap**](.md)|  | [optional]
+ **filter** | [**java.util.HashMap**](.md)|  | [optional]
  **query** | **String**|  | [optional]
  **page** | **Integer**|  | [optional]
  **perPage** | **Integer**|  | [optional]
@@ -188,7 +188,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 LocationsApi apiInstance = new LocationsApi();
-HashMap filter = new HashMap(); // HashMap | 
+java.util.HashMap filter = new java.util.HashMap(); // java.util.HashMap | 
 String query = "query_example"; // String | 
 Integer page = 56; // Integer | 
 Integer perPage = 56; // Integer | 
@@ -206,7 +206,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**HashMap**](.md)|  | [optional]
+ **filter** | [**java.util.HashMap**](.md)|  | [optional]
  **query** | **String**|  | [optional]
  **page** | **Integer**|  | [optional]
  **perPage** | **Integer**|  | [optional]

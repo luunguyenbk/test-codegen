@@ -26,7 +26,8 @@ import org.threeten.bp.OffsetDateTime;
  * CampaignPropertyCreate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T18:06:33.884051Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-12T22:22:16.166043Z[Etc/UTC]")
+
 public class CampaignPropertyCreate {
   @SerializedName("id")
   private Integer id = null;
@@ -57,8 +58,11 @@ public class CampaignPropertyCreate {
    */
   @JsonAdapter(VisibilityCrmEnum.Adapter.class)
   public enum VisibilityCrmEnum {
+    @SerializedName("0")
     NUMBER_0(0),
+    @SerializedName("10")
     NUMBER_10(10),
+    @SerializedName("30")
     NUMBER_30(30);
 
     private Integer value;
@@ -74,9 +78,9 @@ public class CampaignPropertyCreate {
     public String toString() {
       return String.valueOf(value);
     }
-    public static VisibilityCrmEnum fromValue(String text) {
+    public static VisibilityCrmEnum fromValue(Integer input) {
       for (VisibilityCrmEnum b : VisibilityCrmEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
@@ -85,13 +89,13 @@ public class CampaignPropertyCreate {
     public static class Adapter extends TypeAdapter<VisibilityCrmEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final VisibilityCrmEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public VisibilityCrmEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextInt();
-        return VisibilityCrmEnum.fromValue(String.valueOf(value));
+        return VisibilityCrmEnum.fromValue((Integer)(value));
       }
     }
   }  @SerializedName("visibilityCrm")
@@ -102,8 +106,11 @@ public class CampaignPropertyCreate {
    */
   @JsonAdapter(VisibilityReportEnum.Adapter.class)
   public enum VisibilityReportEnum {
+    @SerializedName("0")
     NUMBER_0(0),
+    @SerializedName("10")
     NUMBER_10(10),
+    @SerializedName("30")
     NUMBER_30(30);
 
     private Integer value;
@@ -119,9 +126,9 @@ public class CampaignPropertyCreate {
     public String toString() {
       return String.valueOf(value);
     }
-    public static VisibilityReportEnum fromValue(String text) {
+    public static VisibilityReportEnum fromValue(Integer input) {
       for (VisibilityReportEnum b : VisibilityReportEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
@@ -130,13 +137,13 @@ public class CampaignPropertyCreate {
     public static class Adapter extends TypeAdapter<VisibilityReportEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final VisibilityReportEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public VisibilityReportEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextInt();
-        return VisibilityReportEnum.fromValue(String.valueOf(value));
+        return VisibilityReportEnum.fromValue((Integer)(value));
       }
     }
   }  @SerializedName("visibilityReport")

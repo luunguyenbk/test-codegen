@@ -26,7 +26,8 @@ import org.threeten.bp.OffsetDateTime;
  * MessageTemplateCreate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-07T18:06:33.884051Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-12T22:22:16.166043Z[Etc/UTC]")
+
 public class MessageTemplateCreate {
   @SerializedName("id")
   private String id = null;
@@ -39,15 +40,25 @@ public class MessageTemplateCreate {
    */
   @JsonAdapter(LanguageEnum.Adapter.class)
   public enum LanguageEnum {
+    @SerializedName("en")
     EN("en"),
+    @SerializedName("fr")
     FR("fr"),
+    @SerializedName("cmn")
     CMN("cmn"),
+    @SerializedName("es")
     ES("es"),
+    @SerializedName("yue")
     YUE("yue"),
+    @SerializedName("ar")
     AR("ar"),
+    @SerializedName("ko")
     KO("ko"),
+    @SerializedName("pa")
     PA("pa"),
+    @SerializedName("tl")
     TL("tl"),
+    @SerializedName("fa")
     FA("fa");
 
     private String value;
@@ -63,9 +74,9 @@ public class MessageTemplateCreate {
     public String toString() {
       return String.valueOf(value);
     }
-    public static LanguageEnum fromValue(String text) {
+    public static LanguageEnum fromValue(String input) {
       for (LanguageEnum b : LanguageEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
@@ -74,13 +85,13 @@ public class MessageTemplateCreate {
     public static class Adapter extends TypeAdapter<LanguageEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final LanguageEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public LanguageEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return LanguageEnum.fromValue(String.valueOf(value));
+        return LanguageEnum.fromValue((String)(value));
       }
     }
   }  @SerializedName("language")
