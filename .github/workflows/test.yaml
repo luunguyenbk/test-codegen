@@ -1,28 +1,22 @@
-name: Tedt codegen
+name: Codegen automate generation
 
 on:
-  # Manually trigger the workflow for testing purposes
   workflow_dispatch:
     inputs:
       release_version:
         type: string
         required: true
-  # Listen for the release-created event which is triggered by the webapp deploy action. https://github.com/peter-evans/repository-dispatch helps to implement Event-based communication between workflows.
   repository_dispatch:
       types: [release-created]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SLEEP_DURATION: 5s
       SWAGGER_URL: https://app.statflo.com/api/doc.json
       RELEASE_VERSION: ${{ inputs.release_version }} 
-      
-    steps:
-      - name: Wait for environment-defined duration
-        run: sleep $SLEEP_DURATION
-        shell: bash
 
+    steps:
       - name: Set release version from webapp's release
         if: github.event.client_payload.release_version != ''
         run: echo "RELEASE_VERSION=${{ github.event.client_payload.release_version }}" >> $GITHUB_ENV
@@ -34,19 +28,17 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get install -y gh
 
-      # This step is used to pull the client info from the Dispatcher
-      # - name: Pull client info 
-      #   env:
-      #     PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
-      #   run: echo "$PAYLOAD_CONTEXT"
-
       - name: Generate code from Swagger file
         run: |
-          java -jar ./bin/swagger-codegen-cli-3.0.62.jar generate -i $SWAGGER_URL -l java -o . \
+          # Delete README.md to allow swagger-codegen generate it automatically 
+          rm -f README.md
+
+          # Generate code from Swagger file
+          java -jar ./bin/swagger-codegen-cli-3.0.62.jar generate -i $SWAGGER_URL -l java -o . -t ./templates \
           --invoker-package com.statflo.client \
           --model-package com.statflo.client.model \
           --api-package com.statflo.client.api \
-          --additional-properties groupId=com.statflo,artifactId=statflo-java-sdk
+          --additional-properties groupId=com.statflo,artifactId=statflo-java-sdk,releaseVersion=${{ env.RELEASE_VERSION }}
 
       - name: Commit and Push
         run: |
