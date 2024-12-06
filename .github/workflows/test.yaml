@@ -6,6 +6,7 @@ on:
       release_version:
         type: string
         required: true
+        description: "Enter the release version (e.g., X.X.X or VX.X.X)"
   repository_dispatch:
       types: [release-created]
 
