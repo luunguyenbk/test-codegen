@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
  * ReassignRepSummary
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:23:31.250194Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:28:13.044281Z[Etc/UTC]")
 
 public class ReassignRepSummary {
   @SerializedName("id")
