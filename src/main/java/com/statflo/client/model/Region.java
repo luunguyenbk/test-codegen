@@ -25,7 +25,7 @@ import java.io.IOException;
  * Region
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:28:13.044281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:29:11.904925Z[Etc/UTC]")
 
 public class Region {
   @SerializedName("id")
