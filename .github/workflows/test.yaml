@@ -24,7 +24,7 @@ jobs:
 
       - name: Validate and Extract Version
         run: |
-          clean_version=$(echo "${{ env.RELEASE_VERSION }" | grep -oE 'V?[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+)?')
+          clean_version=$(echo "${{ env.RELEASE_VERSION }}" | grep -oE 'V?[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+)?')
       
           if [ -n "$clean_version" ]; then
             echo "RELEASE_VERSION=$clean_version" >> $GITHUB_ENV
