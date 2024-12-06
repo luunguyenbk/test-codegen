@@ -26,8 +26,8 @@ jobs:
         run: |
           version="${{ env.RELEASE_VERSION }}"
 
-          if [[ "$version" =~ (^|[^a-zA-Z0-9])V?[0-9]+\.[0-9]+\.[0-9]+($|[^a-zA-Z0-9]) ]]; then
-            echo "RELEASE_VERSION=$(echo "$version" | grep -oE 'V?[0-9]+\.[0-9]+\.[0-9]+')" >> $GITHUB_ENV
+          if [[ "$version" =~ (^|[^a-zA-Z0-9])V?[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+)?($|[^a-zA-Z0-9]) ]]; then
+            echo "RELEASE_VERSION=$(echo "$version" | grep -oE 'V?[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+)?')" >> $GITHUB_ENV
           else
             echo "Error: Input does not contain a valid version format (X.X.X or VX.X.X)."
             exit 1
