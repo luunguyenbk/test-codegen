@@ -25,7 +25,7 @@ import java.io.IOException;
  * CampaignUpdate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-13T16:08:35.130455Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:23:31.250194Z[Etc/UTC]")
 
 public class CampaignUpdate {
   @SerializedName("title")
@@ -43,11 +43,103 @@ public class CampaignUpdate {
   @SerializedName("totangoName")
   private String totangoName = null;
 
-  @SerializedName("type")
-  private String type = "add";
+  /**
+   * Gets or Sets type
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    @SerializedName("add")
+    ADD("add"),
+    @SerializedName("monthly")
+    MONTHLY("monthly"),
+    @SerializedName("once")
+    ONCE("once"),
+    @SerializedName("daily")
+    DAILY("daily");
 
-  @SerializedName("frequency")
-  private String frequency = "monthly";
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static TypeEnum fromValue(String input) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextString();
+        return TypeEnum.fromValue((String)(value));
+      }
+    }
+  }  @SerializedName("type")
+  private TypeEnum type = TypeEnum.ADD;
+
+  /**
+   * Gets or Sets frequency
+   */
+  @JsonAdapter(FrequencyEnum.Adapter.class)
+  public enum FrequencyEnum {
+    @SerializedName("monthly")
+    MONTHLY("monthly"),
+    @SerializedName("once")
+    ONCE("once"),
+    @SerializedName("daily")
+    DAILY("daily");
+
+    private String value;
+
+    FrequencyEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static FrequencyEnum fromValue(String input) {
+      for (FrequencyEnum b : FrequencyEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<FrequencyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FrequencyEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
+
+      @Override
+      public FrequencyEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextString();
+        return FrequencyEnum.fromValue((String)(value));
+      }
+    }
+  }  @SerializedName("frequency")
+  private FrequencyEnum frequency = FrequencyEnum.MONTHLY;
 
   @SerializedName("lifetime")
   private String lifetime = "monthly";
@@ -58,8 +150,57 @@ public class CampaignUpdate {
   @SerializedName("carrierAllowed")
   private Boolean carrierAllowed = false;
 
-  @SerializedName("accountType")
-  private String accountType = "I";
+  /**
+   * Gets or Sets accountType
+   */
+  @JsonAdapter(AccountTypeEnum.Adapter.class)
+  public enum AccountTypeEnum {
+    @SerializedName("I")
+    I("I"),
+    @SerializedName("D")
+    D("D"),
+    @SerializedName("C")
+    C("C"),
+    @SerializedName("B")
+    B("B"),
+    @SerializedName("L")
+    L("L");
+
+    private String value;
+
+    AccountTypeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static AccountTypeEnum fromValue(String input) {
+      for (AccountTypeEnum b : AccountTypeEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<AccountTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AccountTypeEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
+
+      @Override
+      public AccountTypeEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextString();
+        return AccountTypeEnum.fromValue((String)(value));
+      }
+    }
+  }  @SerializedName("accountType")
+  private AccountTypeEnum accountType = AccountTypeEnum.I;
 
   @SerializedName("dncScrub")
   private Boolean dncScrub = false;
@@ -175,7 +316,7 @@ public class CampaignUpdate {
     this.totangoName = totangoName;
   }
 
-  public CampaignUpdate type(String type) {
+  public CampaignUpdate type(TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -185,15 +326,15 @@ public class CampaignUpdate {
    * @return type
   **/
   @Schema(description = "")
-  public String getType() {
+  public TypeEnum getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
-  public CampaignUpdate frequency(String frequency) {
+  public CampaignUpdate frequency(FrequencyEnum frequency) {
     this.frequency = frequency;
     return this;
   }
@@ -203,11 +344,11 @@ public class CampaignUpdate {
    * @return frequency
   **/
   @Schema(description = "")
-  public String getFrequency() {
+  public FrequencyEnum getFrequency() {
     return frequency;
   }
 
-  public void setFrequency(String frequency) {
+  public void setFrequency(FrequencyEnum frequency) {
     this.frequency = frequency;
   }
 
@@ -265,7 +406,7 @@ public class CampaignUpdate {
     this.carrierAllowed = carrierAllowed;
   }
 
-  public CampaignUpdate accountType(String accountType) {
+  public CampaignUpdate accountType(AccountTypeEnum accountType) {
     this.accountType = accountType;
     return this;
   }
@@ -275,11 +416,11 @@ public class CampaignUpdate {
    * @return accountType
   **/
   @Schema(description = "")
-  public String getAccountType() {
+  public AccountTypeEnum getAccountType() {
     return accountType;
   }
 
-  public void setAccountType(String accountType) {
+  public void setAccountType(AccountTypeEnum accountType) {
     this.accountType = accountType;
   }
 

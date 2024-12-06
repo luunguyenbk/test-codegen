@@ -26,7 +26,7 @@ import org.threeten.bp.OffsetDateTime;
  * MessageTemplateUpdate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-13T16:08:35.130455Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:23:31.250194Z[Etc/UTC]")
 
 public class MessageTemplateUpdate {
   @SerializedName("id")
@@ -102,9 +102,6 @@ public class MessageTemplateUpdate {
 
   @SerializedName("template")
   private Object template = null;
-
-  @SerializedName("callListId")
-  private Integer callListId = null;
 
   @SerializedName("priority")
   private Integer priority = 100;
@@ -202,24 +199,6 @@ public class MessageTemplateUpdate {
     this.template = template;
   }
 
-  public MessageTemplateUpdate callListId(Integer callListId) {
-    this.callListId = callListId;
-    return this;
-  }
-
-   /**
-   * Get callListId
-   * @return callListId
-  **/
-  @Schema(description = "")
-  public Integer getCallListId() {
-    return callListId;
-  }
-
-  public void setCallListId(Integer callListId) {
-    this.callListId = callListId;
-  }
-
   public MessageTemplateUpdate priority(Integer priority) {
     this.priority = priority;
     return this;
@@ -271,14 +250,13 @@ public class MessageTemplateUpdate {
         Objects.equals(this.language, messageTemplateUpdate.language) &&
         Objects.equals(this.metadata, messageTemplateUpdate.metadata) &&
         Objects.equals(this.template, messageTemplateUpdate.template) &&
-        Objects.equals(this.callListId, messageTemplateUpdate.callListId) &&
         Objects.equals(this.priority, messageTemplateUpdate.priority) &&
         Objects.equals(this.dateDeleted, messageTemplateUpdate.dateDeleted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateName, language, metadata, template, callListId, priority, dateDeleted);
+    return Objects.hash(id, templateName, language, metadata, template, priority, dateDeleted);
   }
 
 
@@ -292,7 +270,6 @@ public class MessageTemplateUpdate {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
-    sb.append("    callListId: ").append(toIndentedString(callListId)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    dateDeleted: ").append(toIndentedString(dateDeleted)).append("\n");
     sb.append("}");

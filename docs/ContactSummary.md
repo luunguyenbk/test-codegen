@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **province** | **String** |  | 
 **country** | **String** |  | 
 **zipCode** | **String** |  | 
-**phoneNumber** | **String** |  | 
+**phoneNumber** | **String** |  |  [optional]
 **phoneExtension** | **String** |  |  [optional]
 **email** | **String** |  |  [optional]
 **primaryContact** | **Boolean** |  |  [optional]

@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.statflo.client.model.Campaign;
+import com.statflo.client.model.CampaignSummary;
 import com.statflo.client.model.Carrier;
 import com.statflo.client.model.Dealer;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * CampaignMetadataSummary
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-13T16:08:35.130455Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:23:31.250194Z[Etc/UTC]")
 
 public class CampaignMetadataSummary {
   @SerializedName("id")
@@ -42,7 +42,7 @@ public class CampaignMetadataSummary {
   private Dealer dealer = null;
 
   @SerializedName("campaign")
-  private Campaign campaign = null;
+  private CampaignSummary campaign = null;
 
   @SerializedName("metadata")
   private String metadata = null;
@@ -107,7 +107,7 @@ public class CampaignMetadataSummary {
     this.dealer = dealer;
   }
 
-  public CampaignMetadataSummary campaign(Campaign campaign) {
+  public CampaignMetadataSummary campaign(CampaignSummary campaign) {
     this.campaign = campaign;
     return this;
   }
@@ -117,11 +117,11 @@ public class CampaignMetadataSummary {
    * @return campaign
   **/
   @Schema(description = "")
-  public Campaign getCampaign() {
+  public CampaignSummary getCampaign() {
     return campaign;
   }
 
-  public void setCampaign(Campaign campaign) {
+  public void setCampaign(CampaignSummary campaign) {
     this.campaign = campaign;
   }
 

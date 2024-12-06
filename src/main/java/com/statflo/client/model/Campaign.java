@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.statflo.client.model.CampaignMetadataSummary;
+import com.statflo.client.model.CampaignPropertySummary;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ import java.util.List;
  * Campaign
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-13T16:08:35.130455Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:23:31.250194Z[Etc/UTC]")
 
 public class Campaign {
   @SerializedName("title")
@@ -90,6 +91,9 @@ public class Campaign {
 
   @SerializedName("campaignMetadata")
   private List<CampaignMetadataSummary> campaignMetadata = null;
+
+  @SerializedName("campaignProperties")
+  private List<CampaignPropertySummary> campaignProperties = null;
 
   public Campaign title(String title) {
     this.title = title;
@@ -459,6 +463,32 @@ public class Campaign {
     this.campaignMetadata = campaignMetadata;
   }
 
+  public Campaign campaignProperties(List<CampaignPropertySummary> campaignProperties) {
+    this.campaignProperties = campaignProperties;
+    return this;
+  }
+
+  public Campaign addCampaignPropertiesItem(CampaignPropertySummary campaignPropertiesItem) {
+    if (this.campaignProperties == null) {
+      this.campaignProperties = new ArrayList<CampaignPropertySummary>();
+    }
+    this.campaignProperties.add(campaignPropertiesItem);
+    return this;
+  }
+
+   /**
+   * Get campaignProperties
+   * @return campaignProperties
+  **/
+  @Schema(description = "")
+  public List<CampaignPropertySummary> getCampaignProperties() {
+    return campaignProperties;
+  }
+
+  public void setCampaignProperties(List<CampaignPropertySummary> campaignProperties) {
+    this.campaignProperties = campaignProperties;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -488,12 +518,13 @@ public class Campaign {
         Objects.equals(this.transactionLatest, campaign.transactionLatest) &&
         Objects.equals(this.productTypes, campaign.productTypes) &&
         Objects.equals(this.source, campaign.source) &&
-        Objects.equals(this.campaignMetadata, campaign.campaignMetadata);
+        Objects.equals(this.campaignMetadata, campaign.campaignMetadata) &&
+        Objects.equals(this.campaignProperties, campaign.campaignProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, id, campaignNickname, totangoName, type, frequency, lifetime, method, carrierAllowed, accountType, dncScrub, reportingPeriodType, reportingPeriodBefore, reportingPeriodAfter, transactionEarliest, transactionLatest, productTypes, source, campaignMetadata);
+    return Objects.hash(title, description, id, campaignNickname, totangoName, type, frequency, lifetime, method, carrierAllowed, accountType, dncScrub, reportingPeriodType, reportingPeriodBefore, reportingPeriodAfter, transactionEarliest, transactionLatest, productTypes, source, campaignMetadata, campaignProperties);
   }
 
 
@@ -522,6 +553,7 @@ public class Campaign {
     sb.append("    productTypes: ").append(toIndentedString(productTypes)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    campaignMetadata: ").append(toIndentedString(campaignMetadata)).append("\n");
+    sb.append("    campaignProperties: ").append(toIndentedString(campaignProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

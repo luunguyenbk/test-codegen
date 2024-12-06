@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **language** | **String** |  |  [optional]
 **metadata** | **Object** |  |  [optional]
 **template** | **Object** |  |  [optional]
-**callListId** | **Integer** |  |  [optional]
+**campaign** | [**CampaignSummary**](CampaignSummary.md) |  |  [optional]
 **priority** | **Integer** |  |  [optional]
 **dateDeleted** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **messageTemplateAssignments** | [**List&lt;MessageTemplateAssignment&gt;**](MessageTemplateAssignment.md) |  |  [optional]

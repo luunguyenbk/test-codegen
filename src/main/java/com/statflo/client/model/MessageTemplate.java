@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.statflo.client.model.CampaignSummary;
 import com.statflo.client.model.Carrier;
 import com.statflo.client.model.Dealer;
 import com.statflo.client.model.MessageTemplateAssignment;
@@ -31,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * MessageTemplate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-13T16:08:35.130455Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:23:31.250194Z[Etc/UTC]")
 
 public class MessageTemplate {
   @SerializedName("id")
@@ -55,8 +56,8 @@ public class MessageTemplate {
   @SerializedName("template")
   private Object template = null;
 
-  @SerializedName("callListId")
-  private Integer callListId = null;
+  @SerializedName("campaign")
+  private CampaignSummary campaign = null;
 
   @SerializedName("priority")
   private Integer priority = 100;
@@ -193,22 +194,22 @@ public class MessageTemplate {
     this.template = template;
   }
 
-  public MessageTemplate callListId(Integer callListId) {
-    this.callListId = callListId;
+  public MessageTemplate campaign(CampaignSummary campaign) {
+    this.campaign = campaign;
     return this;
   }
 
    /**
-   * Get callListId
-   * @return callListId
+   * Get campaign
+   * @return campaign
   **/
   @Schema(description = "")
-  public Integer getCallListId() {
-    return callListId;
+  public CampaignSummary getCampaign() {
+    return campaign;
   }
 
-  public void setCallListId(Integer callListId) {
-    this.callListId = callListId;
+  public void setCampaign(CampaignSummary campaign) {
+    this.campaign = campaign;
   }
 
   public MessageTemplate priority(Integer priority) {
@@ -290,7 +291,7 @@ public class MessageTemplate {
         Objects.equals(this.language, messageTemplate.language) &&
         Objects.equals(this.metadata, messageTemplate.metadata) &&
         Objects.equals(this.template, messageTemplate.template) &&
-        Objects.equals(this.callListId, messageTemplate.callListId) &&
+        Objects.equals(this.campaign, messageTemplate.campaign) &&
         Objects.equals(this.priority, messageTemplate.priority) &&
         Objects.equals(this.dateDeleted, messageTemplate.dateDeleted) &&
         Objects.equals(this.messageTemplateAssignments, messageTemplate.messageTemplateAssignments);
@@ -298,7 +299,7 @@ public class MessageTemplate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, carrier, dealer, templateName, language, metadata, template, callListId, priority, dateDeleted, messageTemplateAssignments);
+    return Objects.hash(id, carrier, dealer, templateName, language, metadata, template, campaign, priority, dateDeleted, messageTemplateAssignments);
   }
 
 
@@ -314,7 +315,7 @@ public class MessageTemplate {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
-    sb.append("    callListId: ").append(toIndentedString(callListId)).append("\n");
+    sb.append("    campaign: ").append(toIndentedString(campaign)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    dateDeleted: ").append(toIndentedString(dateDeleted)).append("\n");
     sb.append("    messageTemplateAssignments: ").append(toIndentedString(messageTemplateAssignments)).append("\n");

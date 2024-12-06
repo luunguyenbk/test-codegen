@@ -19,13 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.statflo.client.model.DealerSummary;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Carrier
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-11-13T16:08:35.130455Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:23:31.250194Z[Etc/UTC]")
 
 public class Carrier {
   @SerializedName("id")
@@ -39,6 +42,9 @@ public class Carrier {
 
   @SerializedName("logo")
   private String logo = null;
+
+  @SerializedName("dealers")
+  private List<DealerSummary> dealers = null;
 
   public Carrier id(Integer id) {
     this.id = id;
@@ -67,7 +73,7 @@ public class Carrier {
    * Get name
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getName() {
     return name;
   }
@@ -85,7 +91,7 @@ public class Carrier {
    * Get country
    * @return country
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getCountry() {
     return country;
   }
@@ -112,6 +118,32 @@ public class Carrier {
     this.logo = logo;
   }
 
+  public Carrier dealers(List<DealerSummary> dealers) {
+    this.dealers = dealers;
+    return this;
+  }
+
+  public Carrier addDealersItem(DealerSummary dealersItem) {
+    if (this.dealers == null) {
+      this.dealers = new ArrayList<DealerSummary>();
+    }
+    this.dealers.add(dealersItem);
+    return this;
+  }
+
+   /**
+   * Get dealers
+   * @return dealers
+  **/
+  @Schema(description = "")
+  public List<DealerSummary> getDealers() {
+    return dealers;
+  }
+
+  public void setDealers(List<DealerSummary> dealers) {
+    this.dealers = dealers;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +157,13 @@ public class Carrier {
     return Objects.equals(this.id, carrier.id) &&
         Objects.equals(this.name, carrier.name) &&
         Objects.equals(this.country, carrier.country) &&
-        Objects.equals(this.logo, carrier.logo);
+        Objects.equals(this.logo, carrier.logo) &&
+        Objects.equals(this.dealers, carrier.dealers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, country, logo);
+    return Objects.hash(id, name, country, logo, dealers);
   }
 
 
@@ -143,6 +176,7 @@ public class Carrier {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    logo: ").append(toIndentedString(logo)).append("\n");
+    sb.append("    dealers: ").append(toIndentedString(dealers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

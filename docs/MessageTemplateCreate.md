@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **language** | [**LanguageEnum**](#LanguageEnum) |  |  [optional]
 **metadata** | **Object** |  |  [optional]
 **template** | **Object** |  | 
-**callListId** | **Integer** |  |  [optional]
 **priority** | **Integer** |  |  [optional]
 **dateDeleted** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
