@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
 **id** | **Integer** |  | 
 **campaignNickname** | **String** |  | 
 **totangoName** | **String** |  |  [optional]
@@ -23,4 +21,5 @@ Name | Type | Description | Notes
 **productTypes** | **String** |  |  [optional]
 **source** | **String** |  |  [optional]
 **campaignMetadata** | [**List&lt;CampaignMetadataSummary&gt;**](CampaignMetadataSummary.md) |  |  [optional]
+**campaignMappings** | [**List&lt;CampaignMappingSummary&gt;**](CampaignMappingSummary.md) |  |  [optional]
 **campaignProperties** | [**List&lt;CampaignPropertySummary&gt;**](CampaignPropertySummary.md) |  |  [optional]

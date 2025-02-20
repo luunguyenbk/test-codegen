@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
 **id** | **Integer** |  | 
 **campaignNickname** | **String** |  | 
 **totangoName** | **String** |  |  [optional]

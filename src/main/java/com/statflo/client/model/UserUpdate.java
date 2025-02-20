@@ -27,7 +27,7 @@ import java.util.List;
  * UserUpdate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:42:32.704291Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
 
 public class UserUpdate {
   @SerializedName("id")
@@ -46,7 +46,7 @@ public class UserUpdate {
   private String email = null;
 
   @SerializedName("language")
-  private String language = null;
+  private String language = "en";
 
   @SerializedName("salesRepId")
   private String salesRepId = null;
@@ -59,6 +59,9 @@ public class UserUpdate {
 
   @SerializedName("regionId")
   private Integer regionId = null;
+
+  @SerializedName("phoneNumber")
+  private String phoneNumber = null;
 
   @SerializedName("token")
   private String token = null;
@@ -252,6 +255,24 @@ public class UserUpdate {
     this.regionId = regionId;
   }
 
+  public UserUpdate phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+   /**
+   * Get phoneNumber
+   * @return phoneNumber
+  **/
+  @Schema(description = "")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
   public UserUpdate token(String token) {
     this.token = token;
     return this;
@@ -349,6 +370,7 @@ public class UserUpdate {
         Objects.equals(this.outletId, userUpdate.outletId) &&
         Objects.equals(this.districtId, userUpdate.districtId) &&
         Objects.equals(this.regionId, userUpdate.regionId) &&
+        Objects.equals(this.phoneNumber, userUpdate.phoneNumber) &&
         Objects.equals(this.token, userUpdate.token) &&
         Objects.equals(this.tokenParagon, userUpdate.tokenParagon) &&
         Objects.equals(this.userActive, userUpdate.userActive) &&
@@ -357,7 +379,7 @@ public class UserUpdate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, firstName, lastName, email, language, salesRepId, outletId, districtId, regionId, token, tokenParagon, userActive, permissions);
+    return Objects.hash(id, username, firstName, lastName, email, language, salesRepId, outletId, districtId, regionId, phoneNumber, token, tokenParagon, userActive, permissions);
   }
 
 
@@ -376,6 +398,7 @@ public class UserUpdate {
     sb.append("    outletId: ").append(toIndentedString(outletId)).append("\n");
     sb.append("    districtId: ").append(toIndentedString(districtId)).append("\n");
     sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    tokenParagon: ").append(toIndentedString(tokenParagon)).append("\n");
     sb.append("    userActive: ").append(toIndentedString(userActive)).append("\n");

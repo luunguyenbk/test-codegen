@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
 **id** | **Integer** |  | 
 **campaignNickname** | **String** |  | 
 **totangoName** | **String** |  |  [optional]
@@ -21,7 +19,9 @@ Name | Type | Description | Notes
 **transactionEarliest** | **String** |  |  [optional]
 **transactionLatest** | **String** |  |  [optional]
 **productTypes** | **String** |  |  [optional]
-**source** | **String** |  |  [optional]
+**source** | [**SourceEnum**](#SourceEnum) |  |  [optional]
+**visibilityCrm** | **Integer** |  |  [optional]
+**visibilityReport** | **Integer** |  |  [optional]
 
 <a name="TypeEnum"></a>
 ## Enum: TypeEnum
@@ -49,3 +49,10 @@ D | &quot;D&quot;
 C | &quot;C&quot;
 B | &quot;B&quot;
 L | &quot;L&quot;
+
+<a name="SourceEnum"></a>
+## Enum: SourceEnum
+Name | Value
+---- | -----
+API | &quot;api&quot;
+UPLOADED | &quot;uploaded&quot;

@@ -26,7 +26,7 @@ import java.io.IOException;
  * UserSummary
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:42:32.704291Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
 
 public class UserSummary {
   @SerializedName("id")
@@ -45,7 +45,7 @@ public class UserSummary {
   private String email = null;
 
   @SerializedName("language")
-  private String language = null;
+  private String language = "en";
 
   @SerializedName("salesRepId")
   private String salesRepId = null;
@@ -58,6 +58,9 @@ public class UserSummary {
 
   @SerializedName("regionId")
   private Integer regionId = null;
+
+  @SerializedName("phoneNumber")
+  private String phoneNumber = null;
 
   @SerializedName("userActive")
   private Boolean userActive = true;
@@ -245,6 +248,24 @@ public class UserSummary {
     this.regionId = regionId;
   }
 
+  public UserSummary phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+   /**
+   * Get phoneNumber
+   * @return phoneNumber
+  **/
+  @Schema(description = "")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
   public UserSummary userActive(Boolean userActive) {
     this.userActive = userActive;
     return this;
@@ -301,13 +322,14 @@ public class UserSummary {
         Objects.equals(this.outletId, userSummary.outletId) &&
         Objects.equals(this.districtId, userSummary.districtId) &&
         Objects.equals(this.regionId, userSummary.regionId) &&
+        Objects.equals(this.phoneNumber, userSummary.phoneNumber) &&
         Objects.equals(this.userActive, userSummary.userActive) &&
         Objects.equals(this.dealer, userSummary.dealer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, firstName, lastName, email, language, salesRepId, outletId, districtId, regionId, userActive, dealer);
+    return Objects.hash(id, username, firstName, lastName, email, language, salesRepId, outletId, districtId, regionId, phoneNumber, userActive, dealer);
   }
 
 
@@ -326,6 +348,7 @@ public class UserSummary {
     sb.append("    outletId: ").append(toIndentedString(outletId)).append("\n");
     sb.append("    districtId: ").append(toIndentedString(districtId)).append("\n");
     sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    userActive: ").append(toIndentedString(userActive)).append("\n");
     sb.append("    dealer: ").append(toIndentedString(dealer)).append("\n");
     sb.append("}");

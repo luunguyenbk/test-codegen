@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **metadata** | **Object** |  |  [optional]
 **template** | **Object** |  | 
 **priority** | **Integer** |  |  [optional]
-**dateDeleted** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**categoryIds** | **List&lt;Integer&gt;** |  |  [optional]
+**dateCreated** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 
 <a name="LanguageEnum"></a>
 ## Enum: LanguageEnum

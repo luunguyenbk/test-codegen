@@ -25,7 +25,7 @@ import java.io.IOException;
  * FeatureSummary
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:42:32.704291Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
 
 public class FeatureSummary {
   @SerializedName("id")
@@ -36,6 +36,9 @@ public class FeatureSummary {
 
   @SerializedName("category")
   private String category = null;
+
+  @SerializedName("defaultPackage")
+  private Integer defaultPackage = null;
 
   public FeatureSummary id(Integer id) {
     this.id = id;
@@ -91,6 +94,24 @@ public class FeatureSummary {
     this.category = category;
   }
 
+  public FeatureSummary defaultPackage(Integer defaultPackage) {
+    this.defaultPackage = defaultPackage;
+    return this;
+  }
+
+   /**
+   * Get defaultPackage
+   * @return defaultPackage
+  **/
+  @Schema(description = "")
+  public Integer getDefaultPackage() {
+    return defaultPackage;
+  }
+
+  public void setDefaultPackage(Integer defaultPackage) {
+    this.defaultPackage = defaultPackage;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +124,13 @@ public class FeatureSummary {
     FeatureSummary featureSummary = (FeatureSummary) o;
     return Objects.equals(this.id, featureSummary.id) &&
         Objects.equals(this.name, featureSummary.name) &&
-        Objects.equals(this.category, featureSummary.category);
+        Objects.equals(this.category, featureSummary.category) &&
+        Objects.equals(this.defaultPackage, featureSummary.defaultPackage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, category);
+    return Objects.hash(id, name, category, defaultPackage);
   }
 
 
@@ -120,6 +142,7 @@ public class FeatureSummary {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    defaultPackage: ").append(toIndentedString(defaultPackage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

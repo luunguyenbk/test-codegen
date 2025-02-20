@@ -27,7 +27,7 @@ import java.util.List;
  * UserCreate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:42:32.704291Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
 
 public class UserCreate {
   @SerializedName("id")
@@ -46,7 +46,7 @@ public class UserCreate {
   private String email = null;
 
   @SerializedName("language")
-  private String language = null;
+  private String language = "en";
 
   @SerializedName("salesRepId")
   private String salesRepId = null;
@@ -59,6 +59,9 @@ public class UserCreate {
 
   @SerializedName("regionId")
   private Integer regionId = null;
+
+  @SerializedName("phoneNumber")
+  private String phoneNumber = null;
 
   @SerializedName("token")
   private String token = null;
@@ -252,6 +255,24 @@ public class UserCreate {
     this.regionId = regionId;
   }
 
+  public UserCreate phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+   /**
+   * Get phoneNumber
+   * @return phoneNumber
+  **/
+  @Schema(description = "")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
   public UserCreate token(String token) {
     this.token = token;
     return this;
@@ -349,6 +370,7 @@ public class UserCreate {
         Objects.equals(this.outletId, userCreate.outletId) &&
         Objects.equals(this.districtId, userCreate.districtId) &&
         Objects.equals(this.regionId, userCreate.regionId) &&
+        Objects.equals(this.phoneNumber, userCreate.phoneNumber) &&
         Objects.equals(this.token, userCreate.token) &&
         Objects.equals(this.tokenParagon, userCreate.tokenParagon) &&
         Objects.equals(this.userActive, userCreate.userActive) &&
@@ -357,7 +379,7 @@ public class UserCreate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, firstName, lastName, email, language, salesRepId, outletId, districtId, regionId, token, tokenParagon, userActive, permissions);
+    return Objects.hash(id, username, firstName, lastName, email, language, salesRepId, outletId, districtId, regionId, phoneNumber, token, tokenParagon, userActive, permissions);
   }
 
 
@@ -376,6 +398,7 @@ public class UserCreate {
     sb.append("    outletId: ").append(toIndentedString(outletId)).append("\n");
     sb.append("    districtId: ").append(toIndentedString(districtId)).append("\n");
     sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    tokenParagon: ").append(toIndentedString(tokenParagon)).append("\n");
     sb.append("    userActive: ").append(toIndentedString(userActive)).append("\n");

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **outletId** | **String** |  |  [optional]
 **districtId** | **Integer** |  |  [optional]
 **regionId** | **Integer** |  |  [optional]
+**phoneNumber** | **String** |  |  [optional]
 **userActive** | **Boolean** |  |  [optional]
 **dealer** | [**Dealer**](Dealer.md) |  |  [optional]
 **userPermissions** | [**List&lt;UserPermission&gt;**](UserPermission.md) |  |  [optional]

@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
  * ContactUpdate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:42:32.704291Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
 
 public class ContactUpdate {
   @SerializedName("id")
@@ -187,7 +187,7 @@ public class ContactUpdate {
    * Get streetNumber
    * @return streetNumber
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getStreetNumber() {
     return streetNumber;
   }
@@ -205,7 +205,7 @@ public class ContactUpdate {
    * Get streetName
    * @return streetName
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getStreetName() {
     return streetName;
   }
@@ -223,7 +223,7 @@ public class ContactUpdate {
    * Get city
    * @return city
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getCity() {
     return city;
   }
@@ -241,7 +241,7 @@ public class ContactUpdate {
    * Get province
    * @return province
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getProvince() {
     return province;
   }
@@ -259,7 +259,7 @@ public class ContactUpdate {
    * Get country
    * @return country
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getCountry() {
     return country;
   }
@@ -277,7 +277,7 @@ public class ContactUpdate {
    * Get zipCode
    * @return zipCode
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getZipCode() {
     return zipCode;
   }

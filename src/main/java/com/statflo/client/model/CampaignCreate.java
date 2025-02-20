@@ -25,15 +25,9 @@ import java.io.IOException;
  * CampaignCreate
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:42:32.704291Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
 
 public class CampaignCreate {
-  @SerializedName("title")
-  private String title = null;
-
-  @SerializedName("description")
-  private String description = null;
-
   @SerializedName("id")
   private Integer id = null;
 
@@ -223,44 +217,147 @@ public class CampaignCreate {
   @SerializedName("productTypes")
   private String productTypes = null;
 
-  @SerializedName("source")
-  private String source = "api";
+  /**
+   * Gets or Sets source
+   */
+  @JsonAdapter(SourceEnum.Adapter.class)
+  public enum SourceEnum {
+    @SerializedName("api")
+    API("api"),
+    @SerializedName("uploaded")
+    UPLOADED("uploaded");
 
-  public CampaignCreate title(String title) {
-    this.title = title;
-    return this;
-  }
+    private String value;
 
-   /**
-   * Get title
-   * @return title
-  **/
-  @Schema(description = "")
-  public String getTitle() {
-    return title;
-  }
+    SourceEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static SourceEnum fromValue(String input) {
+      for (SourceEnum b : SourceEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<SourceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SourceEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
 
-  public CampaignCreate description(String description) {
-    this.description = description;
-    return this;
-  }
+      @Override
+      public SourceEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextString();
+        return SourceEnum.fromValue((String)(value));
+      }
+    }
+  }  @SerializedName("source")
+  private SourceEnum source = SourceEnum.API;
 
-   /**
-   * Get description
-   * @return description
-  **/
-  @Schema(description = "")
-  public String getDescription() {
-    return description;
-  }
+  /**
+   * Gets or Sets visibilityCrm
+   */
+  @JsonAdapter(VisibilityCrmEnum.Adapter.class)
+  public enum VisibilityCrmEnum {
+    @SerializedName("0")
+    NUMBER_0(0),
+    @SerializedName("10")
+    NUMBER_10(10),
+    @SerializedName("30")
+    NUMBER_30(30);
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    private Integer value;
+
+    VisibilityCrmEnum(Integer value) {
+      this.value = value;
+    }
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static VisibilityCrmEnum fromValue(Integer input) {
+      for (VisibilityCrmEnum b : VisibilityCrmEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<VisibilityCrmEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final VisibilityCrmEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
+
+      @Override
+      public VisibilityCrmEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextInt();
+        return VisibilityCrmEnum.fromValue((Integer)(value));
+      }
+    }
+  }  @SerializedName("visibilityCrm")
+  private VisibilityCrmEnum visibilityCrm = VisibilityCrmEnum.NUMBER_10;
+
+  /**
+   * Gets or Sets visibilityReport
+   */
+  @JsonAdapter(VisibilityReportEnum.Adapter.class)
+  public enum VisibilityReportEnum {
+    @SerializedName("0")
+    NUMBER_0(0),
+    @SerializedName("10")
+    NUMBER_10(10),
+    @SerializedName("30")
+    NUMBER_30(30);
+
+    private Integer value;
+
+    VisibilityReportEnum(Integer value) {
+      this.value = value;
+    }
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static VisibilityReportEnum fromValue(Integer input) {
+      for (VisibilityReportEnum b : VisibilityReportEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<VisibilityReportEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final VisibilityReportEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
+
+      @Override
+      public VisibilityReportEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextInt();
+        return VisibilityReportEnum.fromValue((Integer)(value));
+      }
+    }
+  }  @SerializedName("visibilityReport")
+  private VisibilityReportEnum visibilityReport = VisibilityReportEnum.NUMBER_10;
 
   public CampaignCreate id(Integer id) {
     this.id = id;
@@ -550,7 +647,7 @@ public class CampaignCreate {
     this.productTypes = productTypes;
   }
 
-  public CampaignCreate source(String source) {
+  public CampaignCreate source(SourceEnum source) {
     this.source = source;
     return this;
   }
@@ -560,12 +657,48 @@ public class CampaignCreate {
    * @return source
   **/
   @Schema(description = "")
-  public String getSource() {
+  public SourceEnum getSource() {
     return source;
   }
 
-  public void setSource(String source) {
+  public void setSource(SourceEnum source) {
     this.source = source;
+  }
+
+  public CampaignCreate visibilityCrm(VisibilityCrmEnum visibilityCrm) {
+    this.visibilityCrm = visibilityCrm;
+    return this;
+  }
+
+   /**
+   * Get visibilityCrm
+   * @return visibilityCrm
+  **/
+  @Schema(description = "")
+  public VisibilityCrmEnum getVisibilityCrm() {
+    return visibilityCrm;
+  }
+
+  public void setVisibilityCrm(VisibilityCrmEnum visibilityCrm) {
+    this.visibilityCrm = visibilityCrm;
+  }
+
+  public CampaignCreate visibilityReport(VisibilityReportEnum visibilityReport) {
+    this.visibilityReport = visibilityReport;
+    return this;
+  }
+
+   /**
+   * Get visibilityReport
+   * @return visibilityReport
+  **/
+  @Schema(description = "")
+  public VisibilityReportEnum getVisibilityReport() {
+    return visibilityReport;
+  }
+
+  public void setVisibilityReport(VisibilityReportEnum visibilityReport) {
+    this.visibilityReport = visibilityReport;
   }
 
 
@@ -578,9 +711,7 @@ public class CampaignCreate {
       return false;
     }
     CampaignCreate campaignCreate = (CampaignCreate) o;
-    return Objects.equals(this.title, campaignCreate.title) &&
-        Objects.equals(this.description, campaignCreate.description) &&
-        Objects.equals(this.id, campaignCreate.id) &&
+    return Objects.equals(this.id, campaignCreate.id) &&
         Objects.equals(this.campaignNickname, campaignCreate.campaignNickname) &&
         Objects.equals(this.totangoName, campaignCreate.totangoName) &&
         Objects.equals(this.type, campaignCreate.type) &&
@@ -596,12 +727,14 @@ public class CampaignCreate {
         Objects.equals(this.transactionEarliest, campaignCreate.transactionEarliest) &&
         Objects.equals(this.transactionLatest, campaignCreate.transactionLatest) &&
         Objects.equals(this.productTypes, campaignCreate.productTypes) &&
-        Objects.equals(this.source, campaignCreate.source);
+        Objects.equals(this.source, campaignCreate.source) &&
+        Objects.equals(this.visibilityCrm, campaignCreate.visibilityCrm) &&
+        Objects.equals(this.visibilityReport, campaignCreate.visibilityReport);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, id, campaignNickname, totangoName, type, frequency, lifetime, method, carrierAllowed, accountType, dncScrub, reportingPeriodType, reportingPeriodBefore, reportingPeriodAfter, transactionEarliest, transactionLatest, productTypes, source);
+    return Objects.hash(id, campaignNickname, totangoName, type, frequency, lifetime, method, carrierAllowed, accountType, dncScrub, reportingPeriodType, reportingPeriodBefore, reportingPeriodAfter, transactionEarliest, transactionLatest, productTypes, source, visibilityCrm, visibilityReport);
   }
 
 
@@ -610,8 +743,6 @@ public class CampaignCreate {
     StringBuilder sb = new StringBuilder();
     sb.append("class CampaignCreate {\n");
     
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    campaignNickname: ").append(toIndentedString(campaignNickname)).append("\n");
     sb.append("    totangoName: ").append(toIndentedString(totangoName)).append("\n");
@@ -629,6 +760,8 @@ public class CampaignCreate {
     sb.append("    transactionLatest: ").append(toIndentedString(transactionLatest)).append("\n");
     sb.append("    productTypes: ").append(toIndentedString(productTypes)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    visibilityCrm: ").append(toIndentedString(visibilityCrm)).append("\n");
+    sb.append("    visibilityReport: ").append(toIndentedString(visibilityReport)).append("\n");
     sb.append("}");
     return sb.toString();
   }

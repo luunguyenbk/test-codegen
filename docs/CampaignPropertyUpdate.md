@@ -6,11 +6,9 @@ Name | Type | Description | Notes
 **id** | **Integer** |  | 
 **dealerId** | **Integer** |  |  [optional]
 **campaignId** | **Integer** |  | 
-**campaignTerminationDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **campaignPriority** | **Integer** |  |  [optional]
 **displayPriority** | **Integer** |  |  [optional]
 **carryoverUnattempted** | **Boolean** |  |  [optional]
-**visibility** | **Integer** |  |  [optional]
 **visibilityCrm** | [**VisibilityCrmEnum**](#VisibilityCrmEnum) |  |  [optional]
 **visibilityReport** | [**VisibilityReportEnum**](#VisibilityReportEnum) |  |  [optional]
 

@@ -20,15 +20,15 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.statflo.client.model.CampaignSummary;
+import com.statflo.client.model.CampaignVisibility;
 import com.statflo.client.model.Dealer;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import org.threeten.bp.OffsetDateTime;
 /**
  * CampaignProperty
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-12-06T16:42:32.704291Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
 
 public class CampaignProperty {
   @SerializedName("id")
@@ -40,9 +40,6 @@ public class CampaignProperty {
   @SerializedName("campaign")
   private CampaignSummary campaign = null;
 
-  @SerializedName("campaignTerminationDate")
-  private OffsetDateTime campaignTerminationDate = null;
-
   @SerializedName("campaignPriority")
   private Integer campaignPriority = null;
 
@@ -52,14 +49,11 @@ public class CampaignProperty {
   @SerializedName("carryoverUnattempted")
   private Boolean carryoverUnattempted = false;
 
-  @SerializedName("visibility")
-  private Integer visibility = 0;
+  @SerializedName("visibilityCrmStatus")
+  private CampaignVisibility visibilityCrmStatus = null;
 
-  @SerializedName("visibilityCrm")
-  private Integer visibilityCrm = 30;
-
-  @SerializedName("visibilityReport")
-  private Integer visibilityReport = 30;
+  @SerializedName("visibilityReportStatus")
+  private CampaignVisibility visibilityReportStatus = null;
 
   public CampaignProperty id(Integer id) {
     this.id = id;
@@ -113,24 +107,6 @@ public class CampaignProperty {
 
   public void setCampaign(CampaignSummary campaign) {
     this.campaign = campaign;
-  }
-
-  public CampaignProperty campaignTerminationDate(OffsetDateTime campaignTerminationDate) {
-    this.campaignTerminationDate = campaignTerminationDate;
-    return this;
-  }
-
-   /**
-   * Get campaignTerminationDate
-   * @return campaignTerminationDate
-  **/
-  @Schema(description = "")
-  public OffsetDateTime getCampaignTerminationDate() {
-    return campaignTerminationDate;
-  }
-
-  public void setCampaignTerminationDate(OffsetDateTime campaignTerminationDate) {
-    this.campaignTerminationDate = campaignTerminationDate;
   }
 
   public CampaignProperty campaignPriority(Integer campaignPriority) {
@@ -187,58 +163,40 @@ public class CampaignProperty {
     this.carryoverUnattempted = carryoverUnattempted;
   }
 
-  public CampaignProperty visibility(Integer visibility) {
-    this.visibility = visibility;
+  public CampaignProperty visibilityCrmStatus(CampaignVisibility visibilityCrmStatus) {
+    this.visibilityCrmStatus = visibilityCrmStatus;
     return this;
   }
 
    /**
-   * Get visibility
-   * @return visibility
+   * Get visibilityCrmStatus
+   * @return visibilityCrmStatus
   **/
   @Schema(description = "")
-  public Integer getVisibility() {
-    return visibility;
+  public CampaignVisibility getVisibilityCrmStatus() {
+    return visibilityCrmStatus;
   }
 
-  public void setVisibility(Integer visibility) {
-    this.visibility = visibility;
+  public void setVisibilityCrmStatus(CampaignVisibility visibilityCrmStatus) {
+    this.visibilityCrmStatus = visibilityCrmStatus;
   }
 
-  public CampaignProperty visibilityCrm(Integer visibilityCrm) {
-    this.visibilityCrm = visibilityCrm;
+  public CampaignProperty visibilityReportStatus(CampaignVisibility visibilityReportStatus) {
+    this.visibilityReportStatus = visibilityReportStatus;
     return this;
   }
 
    /**
-   * Get visibilityCrm
-   * @return visibilityCrm
+   * Get visibilityReportStatus
+   * @return visibilityReportStatus
   **/
-  @Schema(required = true, description = "")
-  public Integer getVisibilityCrm() {
-    return visibilityCrm;
+  @Schema(description = "")
+  public CampaignVisibility getVisibilityReportStatus() {
+    return visibilityReportStatus;
   }
 
-  public void setVisibilityCrm(Integer visibilityCrm) {
-    this.visibilityCrm = visibilityCrm;
-  }
-
-  public CampaignProperty visibilityReport(Integer visibilityReport) {
-    this.visibilityReport = visibilityReport;
-    return this;
-  }
-
-   /**
-   * Get visibilityReport
-   * @return visibilityReport
-  **/
-  @Schema(required = true, description = "")
-  public Integer getVisibilityReport() {
-    return visibilityReport;
-  }
-
-  public void setVisibilityReport(Integer visibilityReport) {
-    this.visibilityReport = visibilityReport;
+  public void setVisibilityReportStatus(CampaignVisibility visibilityReportStatus) {
+    this.visibilityReportStatus = visibilityReportStatus;
   }
 
 
@@ -254,18 +212,16 @@ public class CampaignProperty {
     return Objects.equals(this.id, campaignProperty.id) &&
         Objects.equals(this.dealer, campaignProperty.dealer) &&
         Objects.equals(this.campaign, campaignProperty.campaign) &&
-        Objects.equals(this.campaignTerminationDate, campaignProperty.campaignTerminationDate) &&
         Objects.equals(this.campaignPriority, campaignProperty.campaignPriority) &&
         Objects.equals(this.displayPriority, campaignProperty.displayPriority) &&
         Objects.equals(this.carryoverUnattempted, campaignProperty.carryoverUnattempted) &&
-        Objects.equals(this.visibility, campaignProperty.visibility) &&
-        Objects.equals(this.visibilityCrm, campaignProperty.visibilityCrm) &&
-        Objects.equals(this.visibilityReport, campaignProperty.visibilityReport);
+        Objects.equals(this.visibilityCrmStatus, campaignProperty.visibilityCrmStatus) &&
+        Objects.equals(this.visibilityReportStatus, campaignProperty.visibilityReportStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dealer, campaign, campaignTerminationDate, campaignPriority, displayPriority, carryoverUnattempted, visibility, visibilityCrm, visibilityReport);
+    return Objects.hash(id, dealer, campaign, campaignPriority, displayPriority, carryoverUnattempted, visibilityCrmStatus, visibilityReportStatus);
   }
 
 
@@ -277,13 +233,11 @@ public class CampaignProperty {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    dealer: ").append(toIndentedString(dealer)).append("\n");
     sb.append("    campaign: ").append(toIndentedString(campaign)).append("\n");
-    sb.append("    campaignTerminationDate: ").append(toIndentedString(campaignTerminationDate)).append("\n");
     sb.append("    campaignPriority: ").append(toIndentedString(campaignPriority)).append("\n");
     sb.append("    displayPriority: ").append(toIndentedString(displayPriority)).append("\n");
     sb.append("    carryoverUnattempted: ").append(toIndentedString(carryoverUnattempted)).append("\n");
-    sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
-    sb.append("    visibilityCrm: ").append(toIndentedString(visibilityCrm)).append("\n");
-    sb.append("    visibilityReport: ").append(toIndentedString(visibilityReport)).append("\n");
+    sb.append("    visibilityCrmStatus: ").append(toIndentedString(visibilityCrmStatus)).append("\n");
+    sb.append("    visibilityReportStatus: ").append(toIndentedString(visibilityReportStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
