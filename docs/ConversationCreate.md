@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **textkitId** | **String** |  |  [optional]
 **opportunityScore** | **Integer** |  |  [optional]
-**insightsWidgetPayload** | **List&lt;Object&gt;** |  |  [optional]
+**insightsWidgetPayload** | **Object** |  |  [optional]
 **dateAdded** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 
 <a name="StatusEnum"></a>
