@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | 
-**dealer** | **OneOfAccountCredentialDealer** |  |  [optional]
+**dealer** | [**Dealer**](Dealer.md) |  |  [optional]
 **accountSid** | **String** |  |  [optional]
 **authToken** | **String** |  |  [optional]
 **secondaryBusinessProfileSid** | **String** |  |  [optional]

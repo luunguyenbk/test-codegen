@@ -11,3 +11,4 @@ Name | Type | Description | Notes
 **carryoverUnattempted** | **Boolean** |  |  [optional]
 **visibilityCrmStatus** | [**CampaignVisibility**](CampaignVisibility.md) |  |  [optional]
 **visibilityReportStatus** | [**CampaignVisibility**](CampaignVisibility.md) |  |  [optional]
+**messageTemplateAssignments** | [**List&lt;MessageTemplateAssignment&gt;**](MessageTemplateAssignment.md) |  |  [optional]

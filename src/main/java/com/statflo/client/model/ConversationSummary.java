@@ -23,14 +23,12 @@ import com.statflo.client.model.Contact;
 import com.statflo.client.model.Dealer;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.threeten.bp.OffsetDateTime;
 /**
  * ConversationSummary
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-23T20:54:52.866298-05:00[America/Toronto]")
 
 public class ConversationSummary {
   @SerializedName("id")
@@ -58,7 +56,7 @@ public class ConversationSummary {
   private Integer opportunityScore = 0;
 
   @SerializedName("insightsWidgetPayload")
-  private List<Object> insightsWidgetPayload = null;
+  private Object insightsWidgetPayload = null;
 
   @SerializedName("dateAdded")
   private OffsetDateTime dateAdded = null;
@@ -207,16 +205,8 @@ public class ConversationSummary {
     this.opportunityScore = opportunityScore;
   }
 
-  public ConversationSummary insightsWidgetPayload(List<Object> insightsWidgetPayload) {
+  public ConversationSummary insightsWidgetPayload(Object insightsWidgetPayload) {
     this.insightsWidgetPayload = insightsWidgetPayload;
-    return this;
-  }
-
-  public ConversationSummary addInsightsWidgetPayloadItem(Object insightsWidgetPayloadItem) {
-    if (this.insightsWidgetPayload == null) {
-      this.insightsWidgetPayload = new ArrayList<Object>();
-    }
-    this.insightsWidgetPayload.add(insightsWidgetPayloadItem);
     return this;
   }
 
@@ -225,11 +215,11 @@ public class ConversationSummary {
    * @return insightsWidgetPayload
   **/
   @Schema(description = "")
-  public List<Object> getInsightsWidgetPayload() {
+  public Object getInsightsWidgetPayload() {
     return insightsWidgetPayload;
   }
 
-  public void setInsightsWidgetPayload(List<Object> insightsWidgetPayload) {
+  public void setInsightsWidgetPayload(Object insightsWidgetPayload) {
     this.insightsWidgetPayload = insightsWidgetPayload;
   }
 

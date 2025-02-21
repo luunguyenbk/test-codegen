@@ -22,13 +22,16 @@ import com.google.gson.stream.JsonWriter;
 import com.statflo.client.model.CampaignSummary;
 import com.statflo.client.model.CampaignVisibility;
 import com.statflo.client.model.Dealer;
+import com.statflo.client.model.MessageTemplateAssignment;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * CampaignProperty
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-23T20:54:52.866298-05:00[America/Toronto]")
 
 public class CampaignProperty {
   @SerializedName("id")
@@ -54,6 +57,9 @@ public class CampaignProperty {
 
   @SerializedName("visibilityReportStatus")
   private CampaignVisibility visibilityReportStatus = null;
+
+  @SerializedName("messageTemplateAssignments")
+  private List<MessageTemplateAssignment> messageTemplateAssignments = null;
 
   public CampaignProperty id(Integer id) {
     this.id = id;
@@ -199,6 +205,32 @@ public class CampaignProperty {
     this.visibilityReportStatus = visibilityReportStatus;
   }
 
+  public CampaignProperty messageTemplateAssignments(List<MessageTemplateAssignment> messageTemplateAssignments) {
+    this.messageTemplateAssignments = messageTemplateAssignments;
+    return this;
+  }
+
+  public CampaignProperty addMessageTemplateAssignmentsItem(MessageTemplateAssignment messageTemplateAssignmentsItem) {
+    if (this.messageTemplateAssignments == null) {
+      this.messageTemplateAssignments = new ArrayList<MessageTemplateAssignment>();
+    }
+    this.messageTemplateAssignments.add(messageTemplateAssignmentsItem);
+    return this;
+  }
+
+   /**
+   * Get messageTemplateAssignments
+   * @return messageTemplateAssignments
+  **/
+  @Schema(description = "")
+  public List<MessageTemplateAssignment> getMessageTemplateAssignments() {
+    return messageTemplateAssignments;
+  }
+
+  public void setMessageTemplateAssignments(List<MessageTemplateAssignment> messageTemplateAssignments) {
+    this.messageTemplateAssignments = messageTemplateAssignments;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,12 +248,13 @@ public class CampaignProperty {
         Objects.equals(this.displayPriority, campaignProperty.displayPriority) &&
         Objects.equals(this.carryoverUnattempted, campaignProperty.carryoverUnattempted) &&
         Objects.equals(this.visibilityCrmStatus, campaignProperty.visibilityCrmStatus) &&
-        Objects.equals(this.visibilityReportStatus, campaignProperty.visibilityReportStatus);
+        Objects.equals(this.visibilityReportStatus, campaignProperty.visibilityReportStatus) &&
+        Objects.equals(this.messageTemplateAssignments, campaignProperty.messageTemplateAssignments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dealer, campaign, campaignPriority, displayPriority, carryoverUnattempted, visibilityCrmStatus, visibilityReportStatus);
+    return Objects.hash(id, dealer, campaign, campaignPriority, displayPriority, carryoverUnattempted, visibilityCrmStatus, visibilityReportStatus, messageTemplateAssignments);
   }
 
 
@@ -238,6 +271,7 @@ public class CampaignProperty {
     sb.append("    carryoverUnattempted: ").append(toIndentedString(carryoverUnattempted)).append("\n");
     sb.append("    visibilityCrmStatus: ").append(toIndentedString(visibilityCrmStatus)).append("\n");
     sb.append("    visibilityReportStatus: ").append(toIndentedString(visibilityReportStatus)).append("\n");
+    sb.append("    messageTemplateAssignments: ").append(toIndentedString(messageTemplateAssignments)).append("\n");
     sb.append("}");
     return sb.toString();
   }

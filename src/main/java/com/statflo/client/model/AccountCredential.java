@@ -19,20 +19,21 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.statflo.client.model.Dealer;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
  * AccountCredential
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-20T13:23:55.050119-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-02-23T20:54:52.866298-05:00[America/Toronto]")
 
 public class AccountCredential {
   @SerializedName("id")
   private Integer id = null;
 
   @SerializedName("dealer")
-  private OneOfAccountCredentialDealer dealer = null;
+  private Dealer dealer = null;
 
   @SerializedName("accountSid")
   private String accountSid = null;
@@ -76,7 +77,7 @@ public class AccountCredential {
     this.id = id;
   }
 
-  public AccountCredential dealer(OneOfAccountCredentialDealer dealer) {
+  public AccountCredential dealer(Dealer dealer) {
     this.dealer = dealer;
     return this;
   }
@@ -86,11 +87,11 @@ public class AccountCredential {
    * @return dealer
   **/
   @Schema(description = "")
-  public OneOfAccountCredentialDealer getDealer() {
+  public Dealer getDealer() {
     return dealer;
   }
 
-  public void setDealer(OneOfAccountCredentialDealer dealer) {
+  public void setDealer(Dealer dealer) {
     this.dealer = dealer;
   }
 
